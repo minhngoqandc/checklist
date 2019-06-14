@@ -11,7 +11,5 @@
 |
 */
 
-Route::get('/login', function () {
-    return view('frontend.login');
-});
-
+Route::get('/login', 'LoginController@getLogin');
+Route::post('/login','LoginController@postLogin');
