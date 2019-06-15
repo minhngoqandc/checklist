@@ -5,23 +5,34 @@ use Illuminate\DataBase\Eloquent\Model;
 class Project extents Model
 {
 	protected $table = 'projects';
+	
 	protected $timestamps = true;
+	
+	protected $primaryKey = 'id';
 
+	public function user()
+	{
+		return $this->hasOne('App\Model\User','id','id_pm');
+	}
+
+	public function users()
+	{
+		return $this->belongsTo('App\Model\User','id','id_pm');
+	}
 
 	public function team()
 	{
-		$this->hasMany('App\Model\Team','id_pj','id');
+		return $this->hasMany('App\Model\Team','id_pj','id');
 	}
 
 	public function sprint()
 	{
-		$this->hasMany('App\Model\Sprint','id_pj','id');
+		return $this->hasMany('App\Model\Sprint','id_pj','id');
 	}
 
 	public function productbacklog()
 	{
-		$this->hasOne('App\Model\ProductBacklog','id_pj','id')
+		return $this->hasOne('App\Model\ProductBacklog','id_pj','id')
 	}
-
 }
 ?>

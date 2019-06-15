@@ -2,24 +2,19 @@
 	namespace App\Model;
 	use Illuminate\DataBase\Eloquent\Model;
 
-	class SFeature extents Model 
+	class PFeature extents Model 
 	{
-		protected $table = 'sfeatures';
+		protected $table = 'pfeatures';
 
-		protected $fillable = {'id','priority','id_sprint','id_pfeature'};
+		protected $fillable = {'id_pb','priority','content'};
 
 		protected $timestamps = false;
 
-		protected $primaryKey = {'id_sprint','id_pfeature'};
+		protected $primaryKey = 'id';
 
-		public function sprint()
+		public function probacklog()
 		{
-			return $this->belongsTo('App\Model\Sprint','id','id_sprint');
-		}
-
-		public function pfeature()
-		{
-			return $this->belongsTo('App\Model\PFeature','id','id_pfeature');;
+			return $this->belongsTo('App\Model\Probacklog','id','id_pb');
 		}
 	}
 ?>

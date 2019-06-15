@@ -19,7 +19,7 @@
 
 		public function pfeature()
 		{
-			return $this->hasMany('App\Model\PFeature','id_pj','id')
+			return $this->hasMany('App\Model\PFeature','id_bp','id')
 		}
 	}
 ?>
