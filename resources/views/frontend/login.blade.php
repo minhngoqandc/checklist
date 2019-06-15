@@ -83,8 +83,8 @@
 					$.ajax({
 						'url': 'login',
 						'data': {
-							'email': $('email').val(),
-							'password': $('password').val(),
+							'email': $('#email').val(),
+							'password': $('#password').val(),
 						}, 
 						'type':'POST',
 						success:function(data){
