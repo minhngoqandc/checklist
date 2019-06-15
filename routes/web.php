@@ -15,3 +15,6 @@ Route::get('/login', function () {
     return view('frontend.login');
 });
 
+Route::get('/create', function () {
+    return view('frontend.createAccount');
+});
