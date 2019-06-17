@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/login', function () {
+    return view('frontend.login');
+});
+
+Route::get('/create', function () {
+    return view('frontend.createAccount');
 });
