@@ -36,7 +36,6 @@ class LoginController extends Controller
     		$email = $request->input('email');
     		$password = $request->input('password');
     		$attempt = Auth::attempt(['email' => $email, 'password' => $password]);
-    		// $attempt = false;
     		if ($attempt){
     			return response()->json([
     				'error' => false,

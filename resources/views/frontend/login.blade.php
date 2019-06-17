@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta charset="UTF-8">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
@@ -20,6 +20,7 @@
 			<h2>CheckList.AIT</h2>
 		</div>
 		<div class="container-fluid">
+<<<<<<< HEAD
 			<div class="row">				
 				<form class="col-10 col-sm-7 col-md-6 col-lg-5" action="" method="POST" role="form" id="form-login">
 					<h2 class="title-form">Log in</h2>
@@ -35,7 +36,7 @@
 					</div>		
 					<div class="forget-password"><a href="#">Forgot your password ?</a></div>			
 					<button type="submit" class="btn btn-primary btn-login">Confirm</button>
-				</form>			
+				</form>
 			</div>
 		</div>
 	</div>
