@@ -18,6 +18,7 @@ class CreateChecklistPfeaturesTable extends Migration
             $table->integer('id_pb');
             $table->string('content');
             $table->tinyint('priority');
+            $table->foreign('id_pb')->references('id')->on('productbacklogs')->onDelete('cascade');
             $table->timestamps();
         });
     }

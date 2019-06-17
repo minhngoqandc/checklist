@@ -19,6 +19,8 @@ class CreateChecklistSfeaturesTable extends Migration
             $table->integer('id_ffeature');
             $table->primary(['id_ffeature','id_sprint']);
             $table->tinyint('priority');
+            $table->foreign('id_sprint')->references('id')->on('sprints')->onDelete('cascade');
+            $table->foreign('id_ffeature')->references('id')->on('ffeatures')->onDelete('cascade');
             $table->timestamps();
         });
     }

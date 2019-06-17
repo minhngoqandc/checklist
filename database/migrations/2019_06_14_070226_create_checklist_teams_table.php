@@ -18,6 +18,8 @@ class CreateChecklistTeamsTable extends Migration
             $table->string('name');
             $table->integer('id_leader');
             $table->integer('id_pj');
+            $table->foreign('id_pj')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('id_leader')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

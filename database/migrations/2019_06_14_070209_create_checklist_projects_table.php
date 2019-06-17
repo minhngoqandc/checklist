@@ -19,6 +19,7 @@ class CreateChecklistProjectsTable extends Migration
             $table->integer('id_pm');
             $table->string('pj_code');
             $table->timestamps('created_at');
+            $table->foreign('id_pm')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -1,64 +1,130 @@
 * {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 html {
-	background-image: url('../images/managerAIT-background3.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
+    background: url('../images/managerAIT-background3.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body {
-	background: transparent;
+    background: transparent;
 }
 
-header h2{
-	color: white;
-    padding-left: 103px;
-    padding-bottom: 40px;
-    padding-top: 30px;
+.title h2 {
+    color: white;
     font-family: 'Russo One', sans-serif;
-    font-size: 2.8em;
     letter-spacing: 5px;
     -webkit-text-stroke-color: #504747;
     -webkit-text-stroke-width: 2px;
 }
 
 form {
-	border: 6px solid #bbbbbb;
-	border-radius: 20px;
-	padding: 6%;
-	z-index: 1;
-	background: #ffffff99;
+    border: 6px solid #bbbbbb;
+    border-radius: 20px;
+    padding: 2%;
+    z-index: 1;
+    background: #ffffff99;
+    margin: auto;
 }
 
 .title-form {
-	text-align: center;
-    /*font-weight: bold;*/
+    text-align: center;
     letter-spacing: 3px;
-    font-size: 2.5em;
     font-family: 'Russo One', sans-serif;
     color: #000000ad;
 }
 
 .lb-form-group {
-    font-size: 1.2em;
     margin: 0;
     padding-left: 3px;
     font-family: 'Roboto Mono', monospace;
 }
 
-.btn {
+input::-webkit-input-placeholder {
+    font-size: 1vw;
+}
+
+.btn-login {
     display: block;
     margin: auto;
-    width: 30%;
     font-family: 'Russo One', sans-serif;
 }
 
 .forget-password {
-	text-align: right;
-	font-size: 0.9em;
-	margin-bottom: 26px;
-	line-height: 0px;
+    text-align: right;
+    margin-bottom: 26px;
+    line-height: 0px;
+}
+
+@media (min-width: 600px) and (max-width: 2000px){
+    .title h2 {
+        font-size: 2.5em;
+        padding-left: 103px;
+        padding-bottom: 40px;
+        padding-top: 30px;
+    }
+    
+    .title-form {
+        font-size: 2.5em;
+    }
+    
+    .lb-form-group {
+        font-size: 1.3em;
+    }
+
+    .btn-login {
+        width: 35%;
+        font-size: 1.3em;
+    }
+    
+    .forget-password {
+        font-size: 1em;
+    }
+    
+    ::placeholder {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 120px) and (max-width: 600px) {
+    .title h2 {
+        font-size: 2.2em;
+        text-align: center;
+        padding: 4% 0;
+    }
+    
+    .title-form {
+        font-size: 2em;
+    }
+    
+    .lb-form-group {
+        font-size: 1.1em;
+    }
+    
+    .forget-password {
+        font-size: 0.9em;
+    }
+    
+    ::placeholder {
+        font-size: 0.9em;
+    }
+}
+
+@media (min-width: 120px) and (max-width: 320px) {
+    .btn-login {
+        width: 30%;
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 120px) and (max-width: 320px) {
+    .btn-login {
+        width: 30%;
+        font-size: 0.7em;
+    }
 }

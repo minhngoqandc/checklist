@@ -22,6 +22,8 @@ class CreateChecklistTasksTable extends Migration
             $table->string('task_code');
             $table->tinyint('priority');
             $table->string('tittle');
+            $table->foreign('id_mem')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_sfeature')->references('id')->on('sfeatures')->onDelete('cascade');
             $table->timestamps();
         });
     }

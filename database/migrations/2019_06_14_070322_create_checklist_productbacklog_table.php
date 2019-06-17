@@ -16,6 +16,7 @@ class CreateChecklistProductbacklogTable extends Migration
         Schema::create('productbacklogs', function (Blueprint $table) {
             $table->increments('id')->primary();
             $table->integer('id_pj');
+            $table->foreign('id_pj')->references('id')->on('projects')->onDelete('cascade');
             $table->timestamps();
         });
     }

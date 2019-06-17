@@ -17,6 +17,8 @@ class CreateChecklistAssignmentsTable extends Migration
             $table->integer('id_mem');
             $table->integer('id_team');
             $table->primary(['id_mem','id_team']);
+            $table->foreign('id_mem')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_team')->references('id')->on('teams')->onDelete('cascade');
             $table->timestamps();
         });
     }
