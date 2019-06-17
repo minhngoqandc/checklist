@@ -19,3 +19,7 @@ Route::get('/create', function () {
     return view('frontend.createAccount');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

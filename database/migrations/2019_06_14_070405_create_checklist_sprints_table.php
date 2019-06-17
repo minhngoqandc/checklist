@@ -17,7 +17,7 @@ class CreateChecklistSprintsTable extends Migration
             $table->increments('id')->primary();
             $table->integer('id_pj');
             $table->integer('id_team');
-            $table->timestamps('time')->date("Y.m.d");
+            $table->timestamps('time_start')->date("Y.m.d");
             $table->boolean('status');  
             $table->foreign('id_pj')->references('id')->on('projects')->onDelete('cascade');  
             $table->foreign('id_team')->references('id')->on('teams')->onDelete('cascade');
