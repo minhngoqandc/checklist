@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChecklistTeamsTable extends Migration
+class CreateTeamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,12 @@ class CreateChecklistTeamsTable extends Migration
     public function up()
     {
         Schema::create('teams', function (Blueprint $table) {
-            $table->increments('id')->primary();
+            $table->increments('id');
             $table->string('name');
-            $table->integer('id_leader');
-            $table->integer('id_pj');
+            $table->unsignedInteger('id_lead');
+            $table->unsignedInteger('id_pj');
+            $table->foreign('id_lead')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_pj')->references('id')->on('projects')->onDelete('cascade');
-            $table->foreign('id_leader')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

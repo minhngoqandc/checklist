@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChecklistSfeaturesTable extends Migration
+class CreateSfeaturesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateChecklistSfeaturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('features', function (Blueprint $table) {
-            $table->integer('id');
-            $table->integer('id_sprint');
-            $table->integer('id_ffeature');
-            $table->primary(['id_ffeature','id_sprint']);
-            $table->tinyint('priority');
+        Schema::create('sfeatures', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('id_sprint');
+            $table->unsignedInteger('id_pfeature');
+            $table->tinyInteger('priority');
             $table->foreign('id_sprint')->references('id')->on('sprints')->onDelete('cascade');
-            $table->foreign('id_ffeature')->references('id')->on('ffeatures')->onDelete('cascade');
+            $table->foreign('id_pfeature')->references('id')->on('pfeatures')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChecklistAssignmentsTable extends Migration
+class CreateAssignmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,11 @@ class CreateChecklistAssignmentsTable extends Migration
     public function up()
     {
         Schema::create('assignments', function (Blueprint $table) {
-            $table->integer('id_mem');
-            $table->integer('id_team');
-            $table->primary(['id_mem','id_team']);
+            $table->unsignedInteger('id_mem');
+            $table->unsignedInteger('id_team');
             $table->foreign('id_mem')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_team')->references('id')->on('teams')->onDelete('cascade');
-            $table->timestamps();
+            $table->primary(['id_mem','id_team']);
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChecklistTasksTable extends Migration
+class CreateTasksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,16 +14,16 @@ class CreateChecklistTasksTable extends Migration
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
-            $table->increments('id')->primary();
-            $table->integer('id_mem');
-            $table->integer('id_sfeature');
-            $table->boolean('status');
-            $table->timestamps('deadline')->date("Y.m.d");
+            $table->increments('id');
+            $table->unsignedInteger('id_mem');
+            $table->unsignedInteger('id_sfeature');
             $table->string('task_code');
-            $table->tinyint('priority');
             $table->string('tittle');
+            $table->timestamp('deadline');
+            $table->tinyInteger('priority');
+            $table->tinyInteger('status');
             $table->foreign('id_mem')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('id_sfeature')->references('id')->on('sfeatures')->onDelete('cascade');
+            $table->foreign('id_sfeature')->references('id')->on('sfeatures')->onDelete('cascade');            
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChecklistUsersTable extends Migration
+class CreateProductbacklogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateChecklistUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id')->primary();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->tinyint('level');
-            $table->rememberToken();
+        Schema::create('productbacklogs', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('id_pj');
+            $table->foreign('id_pj')->references('id')->on('projects')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateChecklistUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('productbacklogs');
     }
 }

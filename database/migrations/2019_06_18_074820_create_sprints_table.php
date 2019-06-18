@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateChecklistSprintsTable extends Migration
+class CreateSprintsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,12 @@ class CreateChecklistSprintsTable extends Migration
     public function up()
     {
         Schema::create('sprints', function (Blueprint $table) {
-            $table->increments('id')->primary();
-            $table->integer('id_pj');
-            $table->integer('id_team');
-            $table->timestamps('time_start')->date("Y.m.d");
-            $table->boolean('status');  
-            $table->foreign('id_pj')->references('id')->on('projects')->onDelete('cascade');  
+            $table->increments('id');
+            $table->unsignedInteger('id_pj');
+            $table->unsignedInteger('id_team');
+            $table->timestamp('time_start');
+            $table->tinyInteger('status');
+            $table->foreign('id_pj')->references('id')->on('projects')->onDelete('cascade');
             $table->foreign('id_team')->references('id')->on('teams')->onDelete('cascade');
             $table->timestamps();
         });
